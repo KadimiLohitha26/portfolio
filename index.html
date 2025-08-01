@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Lohitha Kadimi</a>
+        
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+        </div>
+        
+        <nav class="navbar">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3 class="intro">Hello, I'm</h3>
+            <h1 class="name">Lohitha Kadimi</h1>
+            <h3 class="title">A Student and Aspiring VLSI Enthusiast</h3>
+            <p class="description">Passionate about chip design, FPGA, and semiconductor technology.</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p>Enthusiastic and detail-oriented Electronics and Communication Engineering student with a strong interest in VLSI
+design and semiconductor technology. Skilled in applying academic knowledge through internships and hands-on
+projects involving digital and analog circuit design, RTL coding, and functional verification. Eager to contribute to
+innovative chip design solutions while continuously advancing technical skills in a dynamic, growth-oriented VLSI
+environment.</p>
+            <div class="education">
+                <h3>Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Sagi Rama Krishnam Raju Engineering College </h4>
+                        <p>Bachelor of Technology in Electronics And Communication Engineering</p>
+                        <p>2022 - 2026</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Sri Chaitanya Junior College</h4>
+                        <p>M.P.C. (Mathematics, Physics, Chemistry)</p>
+                        <p>2020 - 2022</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Sri Sarada English Medium School</h4>
+                        <p>Secondary School Certificate (SSC)</p>
+                        <p>2019 - 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-box">
+                    <div class="skill" data-percent="95">
+                        <div class="skill-name">Python Programming</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-percent="90">
+                        <div class="skill-name">C Programming</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-percent="85">
+                        <div class="skill-name">Java Programming</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-percent="80">
+                        <div class="skill-name">Verilog</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-percent="75">
+                        <div class="skill-name">VHDL</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Professional Skills</h3>
+                <div class="skill-box">
+                    <div class="skill" data-percent="85">
+                        <div class="skill-name">Problem Solving</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-percent="80">
+                        <div class="skill-name">Teamwork</div>
+                        <div class="skill-bar">
+                            <div class="skill-per"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+        
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-content">
+                    <h4>Smart Temperature & Humidity Monitor</h4>
+                    <p>Monitor temperature and humidity using a DHT11 sensor and send data to ThingSpeak or a local server.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h4>IoT Water Level Monitor</h4>
+                    <p>Measure water level using an ultrasonic sensor (HC-SR04) and log data to Firebase.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        
+        <div class="social-media">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <form action="#" class="contact-form">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by Lohitha Kadimi | All Rights Reserved.</p>
+        </div>
+        
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+</body>
+</html>
