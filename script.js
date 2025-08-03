@@ -1,18 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger Menu
+    // Mobile Menu Toggle
     const menuBtn = document.querySelector('.menu-btn');
     const navbar = document.querySelector('.navbar');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
     
     menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('open');
         navbar.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
     });
     
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Close menu when clicking on overlay or link
+    menuOverlay.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        navbar.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    });
+    
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
             menuBtn.classList.remove('open');
             navbar.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         });
     });
     
@@ -63,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Certificate Modal
     const modal = document.getElementById('certificateModal');
     const modalIframe = document.getElementById('modalCertificateIframe');
     const closeModal = document.querySelector('.close-modal');
