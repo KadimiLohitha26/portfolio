@@ -63,15 +63,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
+    const modal = document.getElementById('certificateModal');
+    const modalIframe = document.getElementById('modalCertificateIframe');
+    const closeModal = document.querySelector('.close-modal');
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
+    const certificates = {
+        'fullstack': {
+            view: 'https://drive.google.com/file/d/1Fz-tJSknW2k8F7z9qW3lctKOfdjAZT5w/preview',
+        },
+        'verilog': {
+            view: 'https://drive.google.com/file/d/1DzyQa34mfPZofFNVrJDA9FzAEUBzYRke/preview',
+        },
+        'ccna': {
+            view: 'https://drive.google.com/file/d/1UQQZ5gexfolKR8CtClAvO01YsJsJ0WXQ/preview',
+        },
+        'vlsi': {
+            view: 'https://drive.google.com/file/d/1lhN_ZP4-iKyIUpRESJL3XqGqn-akEMnS/preview',
+        },
+        'embedded': {
+            view: 'https://drive.google.com/file/d/1d7q90bTPAir07af9BSbMwWu7At0566kt/preview',
+        }
+    };
+    
+    document.querySelectorAll('.btn-certificate').forEach(button => {
+        button.addEventListener('click', function() {
+            const certId = this.getAttribute('data-certificate');
+            const certData = certificates[certId];
+            
+            if (certData) {
+                modalIframe.src = certData.view;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
     });
     
+    // Close modal when clicking X
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modalIframe.src = '';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside iframe
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            modalIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
     // Scroll Reveal Animation
     ScrollReveal().reveal('.heading', { 
         origin: 'top', 
@@ -80,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 200
     });
     
-    ScrollReveal().reveal('.home-content, .about-content, .skill-category, .project-card, .contact-form', { 
+    ScrollReveal().reveal('.home-content, .about-content, .skill-category, .project-card, .certification-card, .contact-info', { 
         origin: 'bottom',
         distance: '80px',
         duration: 1000,
