@@ -230,6 +230,20 @@ section {
     width: 100%;
 }
 
+.btn-certificate {
+    margin-top: 1.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    color: var(--main-color);
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-certificate:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+}
+
 .about {
     display: flex;
     justify-content: center;
@@ -400,7 +414,7 @@ section {
 .project-card {
     background: var(--bg-color);
     border-radius: 1rem;
-    padding: 2rem;
+    overflow: hidden;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     transition: 0.5s;
 }
@@ -408,6 +422,26 @@ section {
 .project-card:hover {
     transform: translateY(-1rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+    height: 25rem;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-content {
+    padding: 2rem;
 }
 
 .project-content h4 {
@@ -443,8 +477,105 @@ section {
     font-size: 1.6rem;
 }
 
-.contact {
+.certifications {
     background: var(--bg-color);
+}
+
+.certifications .heading {
+    text-align: center;
+}
+
+.certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.certification-card {
+    background: var(--second-bg-color);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.certification-card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.certification-content h4 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.certification-content p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.certification-content p i {
+    color: var(--main-color);
+    font-size: 1.6rem;
+    width: 2rem;
+}
+
+/* Certificate Modal Styles */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-certificate-iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    background: white;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--main-color);
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.contact {
+    background: var(--second-bg-color);
 }
 
 .contact .heading {
@@ -479,39 +610,23 @@ section {
     transform: translateY(-0.3rem);
 }
 
-.contact-form {
-    max-width: 70rem;
-    margin: 0 auto;
+.contact-info {
     text-align: center;
+    margin-top: 3rem;
 }
 
-.input-box {
-    position: relative;
+.contact-info p {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
-.input-box input {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: 0.8rem;
-    resize: none;
-    margin-bottom: 3rem;
+.contact-info i {
+    color: var(--main-color);
+    font-size: 2rem;
 }
 
 .footer {
@@ -520,7 +635,7 @@ textarea {
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .footer-text p {
@@ -602,8 +717,21 @@ textarea {
         text-align: center;
     }
     
-    .skills-container, .projects-container {
+    .skills-container, .projects-container, .certifications-container {
         grid-template-columns: 1fr;
+    }
+    
+    .project-img {
+        height: 20rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        height: 80vh;
+    }
+    
+    .modal-certificate-iframe {
+        height: 70vh;
     }
 }
 
@@ -627,5 +755,27 @@ textarea {
     .footer p {
         text-align: center;
         margin-top: 2rem;
+    }
+    
+    .project-img {
+        height: 15rem;
+    }
+    
+    .social-media {
+        gap: 1.5rem;
+    }
+    
+    .social-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .contact-info p {
+        font-size: 1.4rem;
+    }
+    
+    .certification-card {
+        padding: 2rem;
     }
 }
